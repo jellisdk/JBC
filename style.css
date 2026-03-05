@@ -1,0 +1,169 @@
+/* Algemene body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    background-image: url('jbc-store.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(255, 255, 255, 0.0);
+    z-index: 0;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+.box {
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    display:inline-block;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+    margin-bottom:30px;
+    max-width: 1000px;
+}
+
+.container {
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.kaart {
+    padding:15px 35px;
+    background:white;
+    border-radius:8px;
+    text-decoration:none;
+    color:black;
+    font-size:18px;
+    box-shadow:0 0 10px rgba(0,0,0,0.15);
+    transition:0.2s;
+}
+
+.kaart:hover { transform:scale(1.05); }
+
+.rood { color:red!important; font-weight:bold; }
+.geel { color:orange!important; font-weight:bold; }
+.groen { color:green!important; font-weight:bold; }
+
+.kalenderBox {
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    display:inline-block;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+    margin-top:20px;
+}
+
+#kalender {
+    display:grid;
+    grid-template-columns: repeat(7, 50px);
+    gap:5px;
+    justify-content:center;
+    margin-top:10px;
+}
+
+.dag {
+    width:50px; height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f0f0f0;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.dag:hover { background:#ddd; }
+
+.dag.groen { background:#4caf50; color:white; }
+.dag.geel { background:#ffeb3b; color:black; }
+.dag.rood { background:#ff4d4d; color:white; }
+
+.legenda {
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    align-items:center;
+    margin-bottom:15px;
+    flex-wrap:wrap;
+}
+
+.legendaItem {
+    width:20px; height:20px;
+    display:inline-block;
+    margin-right:5px;
+    border-radius:4px;
+    vertical-align:middle;
+    border:1px solid #888;
+}
+
+.legendaItem.groen { background:#4caf50; }
+.legendaItem.geel { background:#ffeb3b; }
+.legendaItem.rood { background:#ff4d4d; }
+
+button, select, input[type="text"] {
+    padding:8px 15px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+    margin:3px;
+}
+
+button { background:#1976d2; color:white; }
+button:hover { background:#1565c0; }
+
+.dashboardBtn {
+    display:inline-block;
+    padding:10px 20px;
+    background:#1976d2;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.dashboardBtn:hover { background:#125aa3; }
+
+/* Mobiel vriendelijk */
+@media(max-width:600px){
+    #kalender { grid-template-columns: repeat(7, 35px); gap:3px; }
+    .dag { width:35px; height:35px; font-size:12px; }
+    .kaart { padding:10px 20px; font-size:14px; }
+}
+/* Box centreren */
+.box {
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    display:inline-block;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+    margin-bottom:30px;
+    max-width: 1000px;
+
+    /* Toegevoegd voor centreren */
+    text-align: center;       /* inhoud horizontaal centreren */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Specifiek de titel centreren */
+.box h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}

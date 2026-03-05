@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Manager Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="box">
+<h1>Manager Dashboard</h1>
+
+<h3>Nieuwe werknemer toevoegen</h3>
+<input type="text" id="nieuweNaam" placeholder="Naam">
+<select id="winkelSelect">
+    <option value="Wetteren">Wetteren</option>
+    <option value="Aalst">Aalst</option>
+    <option value="beide">Beide</option>
+</select>
+<select id="typeSelect">
+    <option value="Vaste">Vaste</option>
+    <option value="Student">Student</option>
+    <option value="Flexi">Flexi</option>
+    <option value="Manager">Manager</option>
+</select>
+<br><br>
+<button onclick="voegWerknemerToe()">Werknemer toevoegen</button>
+
+<h3>Bestaande werknemers</h3>
+<ul id="werknemersLijst"></ul>
+
+<h3>Dag-specifiek overzicht</h3>
+<label>Kies datum:</label>
+<input type="date" id="filterDag" onchange="renderDagOverzicht()">
+<select id="filterLocDag" onchange="renderDagOverzicht()">
+    <option value="alles">Alle locaties</option>
+    <option value="Wetteren">Wetteren</option>
+    <option value="Aalst">Aalst</option>
+</select>
+<ul id="dagOverzicht"></ul>
+
+<br>
+<a href="index.html" class="dashboardBtn">← Terug naar overzicht</a>
+</div>
+
+</body>
+</html>

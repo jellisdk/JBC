@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Bedrijfsplanning</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="box" id="accessBox">
+    <h1>Welkom bij Bedrijfsplanning</h1>
+    <label>Toegangscode werknemers:</label>
+    <input type="password" id="userCodeInput" placeholder="Voer code in">
+    <button onclick="checkUserAccess()">Toegang</button>
+</div>
+
+<div class="box" id="mainContent" style="display:none;">
+    <h1>Medewerkers Overzicht</h1>
+
+    <label>Locatie:</label>
+    <select id="filterLocatie" onchange="renderHoofdPagina()">
+        <option value="alles">Alle locaties</option>
+        <option value="Wetteren">Wetteren</option>
+        <option value="Aalst">Aalst</option>
+    </select>
+
+    <label>Type werknemer:</label>
+    <select id="filterType" onchange="renderHoofdPagina()">
+        <option value="alles">Alles</option>
+        <option value="Vaste">Vaste</option>
+        <option value="Student">Student</option>
+        <option value="Flexi">Flexi</option>
+        <option value="Manager">Manager</option>
+    </select>
+
+    <div class="container" id="werknemersContainer"></div>
+
+    <br>
+
+    <!-- Manager toegang -->
+    <input type="password" id="managerCodeInput" placeholder="Manager code">
+    <button onclick="checkManagerAccess()">→ Manager Dashboard</button>
+</div>
+
+</body>
+</html>
